@@ -1,24 +1,19 @@
-const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('nav-links');
-
-// Toggle dropdown and icon
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-  menuToggle.textContent = navLinks.classList.contains('active') ? '×' : '☰';
-});
-
-// Smooth scroll to sections
-document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+function navigate(section){
+    if(section){
+    document.querySelector(section).scrollIntoView({behavior: "smooth"});
     }
-    // Close menu after click (on mobile)
-    if (window.innerWidth <= 768) {
-      navLinks.classList.remove('active');
-      menuToggle.textContent = '☰';
     }
-  });
-});
+    
+    const answers = document.querySelectorAll(".faq-answer");
+    const arrows = document.querySelectorAll(".arrow");
+    
+    function toggleFAQ(index){
+    if(answers[index].style.display === "block"){
+    answers[index].style.display = "none";
+    arrows[index].textContent = "▼";
+    } else {
+    answers[index].style.display = "block";
+    arrows[index].textContent = "▲";
+    }
+    }
+    
