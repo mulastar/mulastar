@@ -394,3 +394,39 @@ Yes. <strong>Mulastar Agencies</strong> is a legitimate platform designed to hel
   </script>
   
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protected Content</title>
+<style>
+body, * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+img {
+    -webkit-user-drag: none;
+}
+</style>
+</head>
+<body>
+
+<script>
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey && (e.key === 'c' || e.key === 's' || e.key === 'u' || e.key === 'a')) ||
+        (e.key === 'PrintScreen')) {
+        e.preventDefault();
+    }
+});
+</script>
+
+</body>
+</html>
+
